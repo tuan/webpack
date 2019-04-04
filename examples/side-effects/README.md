@@ -95,17 +95,32 @@ export { c } from "./c";
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -143,8 +158,9 @@ export { c } from "./c";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var big_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! big-module */ 1);
-/* harmony import */ var big_module_with_flag__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! big-module-with-flag */ 5);
+/* harmony import */ var big_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! big-module */ 3);
+/* harmony import */ var big_module_with_flag__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! big-module-with-flag */ 7);
+/* harmony import */ var big_module_with_flag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! big-module-with-flag */ 8);
 
 
 
@@ -152,12 +168,14 @@ console.log(
 	big_module__WEBPACK_IMPORTED_MODULE_0__["a"],
 	big_module__WEBPACK_IMPORTED_MODULE_0__["b"],
 	big_module_with_flag__WEBPACK_IMPORTED_MODULE_1__["a"],
-	big_module_with_flag__WEBPACK_IMPORTED_MODULE_1__["b"]
+	big_module_with_flag__WEBPACK_IMPORTED_MODULE_2__["b"]
 );
 
 
 /***/ }),
-/* 1 */
+/* 1 */,
+/* 2 */,
+/* 3 */
 /*!******************************************!*\
   !*** ./node_modules/big-module/index.js ***!
   \******************************************/
@@ -166,13 +184,13 @@ console.log(
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a */ 2);
+/* harmony import */ var _a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a */ 4);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _a__WEBPACK_IMPORTED_MODULE_0__["a"]; });
 
-/* harmony import */ var _b__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./b */ 3);
+/* harmony import */ var _b__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./b */ 5);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "b", function() { return _b__WEBPACK_IMPORTED_MODULE_1__["b"]; });
 
-/* harmony import */ var _c__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./c */ 4);
+/* harmony import */ var _c__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./c */ 6);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "c", function() { return _c__WEBPACK_IMPORTED_MODULE_2__["c"]; });
 
 
@@ -181,7 +199,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 2 */
+/* 4 */
 /*!**************************************!*\
   !*** ./node_modules/big-module/a.js ***!
   \**************************************/
@@ -195,7 +213,7 @@ const a = "a";
 
 
 /***/ }),
-/* 3 */
+/* 5 */
 /*!**************************************!*\
   !*** ./node_modules/big-module/b.js ***!
   \**************************************/
@@ -209,7 +227,7 @@ const b = "b";
 
 
 /***/ }),
-/* 4 */
+/* 6 */
 /*!**************************************!*\
   !*** ./node_modules/big-module/c.js ***!
   \**************************************/
@@ -223,31 +241,7 @@ const c = "c";
 
 
 /***/ }),
-/* 5 */
-/*!****************************************************!*\
-  !*** ./node_modules/big-module-with-flag/index.js ***!
-  \****************************************************/
-/*! exports provided: a, b, c */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a */ 6);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _a__WEBPACK_IMPORTED_MODULE_0__["a"]; });
-
-/* harmony import */ var _b__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./b */ 7);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "b", function() { return _b__WEBPACK_IMPORTED_MODULE_1__["b"]; });
-
-/* harmony import */ var _c__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./c */ 8);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "c", function() { return _c__WEBPACK_IMPORTED_MODULE_2__["c"]; });
-
-
-
-
-
-
-/***/ }),
-/* 6 */
+/* 7 */
 /*!************************************************!*\
   !*** ./node_modules/big-module-with-flag/a.js ***!
   \************************************************/
@@ -261,7 +255,7 @@ const a = "a";
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /*!************************************************!*\
   !*** ./node_modules/big-module-with-flag/b.js ***!
   \************************************************/
@@ -274,20 +268,6 @@ __webpack_require__.r(__webpack_exports__);
 const b = "b";
 
 
-/***/ }),
-/* 8 */
-/*!************************************************!*\
-  !*** ./node_modules/big-module-with-flag/c.js ***!
-  \************************************************/
-/*! exports provided: c */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return c; });
-const c = "c";
-
-
 /***/ })
 /******/ ]);
 ```
@@ -298,33 +278,33 @@ const c = "c";
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.8.0
+Version: webpack 4.29.0
     Asset      Size  Chunks             Chunk Names
-output.js  7.89 KiB       0  [emitted]  main
+output.js  7.51 KiB       0  [emitted]  main
 Entrypoint main = output.js
-chunk    {0} output.js (main) 422 bytes [entry] [rendered]
-    > .\example.js main
+chunk    {0} output.js (main) 325 bytes [entry] [rendered]
+    > ./example.js main
  [0] ./example.js 140 bytes {0} [built]
      [no exports]
-     single entry .\example.js  main
-     + 8 hidden modules
+     single entry ./example.js  main
+     + 6 hidden modules
 ```
 
 ## Production mode
 
 ```
 Hash: 0a1b2c3d4e5f6a7b8c9d
-Version: webpack 4.8.0
+Version: webpack 4.29.0
     Asset       Size  Chunks             Chunk Names
-output.js  600 bytes       0  [emitted]  main
+output.js  985 bytes       0  [emitted]  main
 Entrypoint main = output.js
 chunk    {0} output.js (main) 325 bytes [entry] [rendered]
-    > .\example.js main
+    > ./example.js main
  [0] ./example.js + 6 modules 325 bytes {0} [built]
      [no exports]
-     single entry .\example.js  main
+     single entry ./example.js  main
      | ./example.js 140 bytes [built]
      |     [no exports]
-     |     single entry .\example.js  main
+     |     single entry ./example.js  main
      |     + 6 hidden modules
 ```
